@@ -9,12 +9,13 @@ st.set_page_config(
 
 @st.cache_data
 def read_in_data():
-    print("Reading in data")
-    return pd.read_csv('schema.csv')
+    path = 'https://raw.githubusercontent.com/AndresNamm/cqd_column_search/main/schema.csv'
+    print(f"Reading in data from path {path}")
+    return pd.read_csv(path)
 
 df = read_in_data()
 
 
 text = st.text_input('Enter a search term:')
-st.dataframe(df[df['friendlyName'].str.lower().str.contains(text)],width=1000,height=1000)
+st.dataframe(df[df['friendlyName'].str.lower().str.contains(text.lower())], use_container_width=True, hide_index=True,height=3000)
 
