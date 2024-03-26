@@ -21,7 +21,7 @@ text = st.text_input('Enter a search term:')
 
 
 choice = st.selectbox(
-    'Choose a category:',
+    'Choose type:',
     ('Dimension', 'Measurement', 'All'), index=2)
 
 
