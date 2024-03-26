@@ -14,7 +14,7 @@ def read_in_data():
     return pd.read_csv(path)
 
 df = read_in_data()
-
+st.title('CQD column search')
 
 text = st.text_input('Enter a search term:')
 
@@ -23,7 +23,7 @@ choice = st.selectbox(
     'Choose a category:',
     ('Dimension', 'Measurement', 'All'), index=2)
 
-st.title('CQD column search')
+
 if len(text) > 0 or choice != "All":
     if choice =="All":
         filtered_df = df[df['Name'].str.lower().str.contains(text.lower())]
