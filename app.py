@@ -31,8 +31,8 @@ if len(text) > 0 or choice != "All":
 
     values_list = filtered_df['Name'].tolist()
     values_str = ', '.join([f'"{val}"' for val in values_list[:min(7, len(values_list))]])
-    st.code(values_str[:7], language="python")
     st.dataframe(filtered_df, use_container_width=True, hide_index=False)
+    st.code(values_str[:7], language="python")
 else:
     st.dataframe(df, use_container_width=True, hide_index=True,height=3000)
 
