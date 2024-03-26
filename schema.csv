@@ -1,4 +1,4 @@
-Type,Category,Friendly Name,Column type,High Cardinality
+Type,Category,Name,Column type,High Cardinality
 Dimension,Endpoint,First CPU Name,String,False
 Dimension,Endpoint,Second CPU Name,String,False
 Dimension,Endpoint,First CPU Number Of Cores,String,False
