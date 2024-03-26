@@ -14,7 +14,8 @@ def read_in_data():
     return pd.read_csv(path)
 
 df = read_in_data()
-st.title('CQD column search')
+
+st.title('CQD Column Search')
 
 text = st.text_input('Enter a search term:')
 
@@ -31,7 +32,7 @@ if len(text) > 0 or choice != "All":
         filtered_df = df[(df['Name'].str.lower().str.contains(text.lower())) & (df['Type'] == choice)]
 
     values_list = filtered_df['Name'].tolist()
-    values_str = ', '.join([f'"{val}"' for val in values_list[:min(7, len(values_list))]])
+    values_str = ', '.join([f'"{val}"' for val in values_list])
     st.dataframe(filtered_df, use_container_width=True, hide_index=False)
     st.code(values_str, language="python")
 else:
