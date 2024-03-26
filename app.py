@@ -23,6 +23,7 @@ choice = st.selectbox(
     'Choose a category:',
     ('Dimension', 'Measurement', 'All'), index=2)
 
+st.title('CQD column search')
 if len(text) > 0 or choice != "All":
     if choice =="All":
         filtered_df = df[df['Name'].str.lower().str.contains(text.lower())]
@@ -32,7 +33,7 @@ if len(text) > 0 or choice != "All":
     values_list = filtered_df['Name'].tolist()
     values_str = ', '.join([f'"{val}"' for val in values_list[:min(7, len(values_list))]])
     st.dataframe(filtered_df, use_container_width=True, hide_index=False)
-    st.code(values_str[:7], language="python")
+    st.code(values_str, language="python")
 else:
     st.dataframe(df, use_container_width=True, hide_index=True,height=3000)
 
