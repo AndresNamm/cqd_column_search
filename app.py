@@ -29,7 +29,7 @@ if len(text) > 0 or choice != "All":
     else:
         filtered_df = df[(df['Name'].str.lower().str.contains(text.lower())) & (df['Type'] == choice)]
 
-    st.dataframe(filtered_df, use_container_width=True, hide_index=True,height=len(filtered_df)*50)
+    st.dataframe(filtered_df, use_container_width=True, hide_index=True)
     values_list = filtered_df['Name'].tolist()
     values_str = ', '.join([f'"{val}"' for val in values_list])
     st.code(values_str, language="python")
