@@ -18,7 +18,7 @@ df = read_in_data()
 
 text = st.text_input('Enter a search term:')
 if len(text) > 0:
-    filtered_df = df[df['Friendly Name'].str.lower().str.contains(text.lower())]
+    filtered_df = df[df['Name'].str.lower().str.contains(text.lower())]
     st.dataframe(filtered_df, use_container_width=True, hide_index=True,height=len(filtered_df)*50)
 else:
     st.dataframe(df, use_container_width=True, hide_index=True,height=3000)
