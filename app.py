@@ -9,7 +9,7 @@ st.set_page_config(
 
 @st.cache_data
 def read_in_data():
-    path = 'https://raw.githubusercontent.com/AndresNamm/cqd_column_search/main/schema.csv'
+    path = 'https://raw.githubusercontent.com/AndresNamm/cqd_column_search/main/updated_schema.csv'
     print(f"Reading in data from path {path}")
     return pd.read_csv(path)
 
