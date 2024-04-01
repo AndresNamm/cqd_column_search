@@ -34,7 +34,12 @@ if len(text) > 0 or choice != "All":
     values_list = filtered_df['Name'].tolist()
     values_str = ', '.join([f'"{val}"' for val in values_list])
     st.dataframe(filtered_df, use_container_width=True, hide_index=False)
+    st.title('Results as single string:')
     st.code(values_str, language="python")
+    st.title('Results as markdown list:')
+    st.code('\n'.join([f'- {val}' for val in values_list]), language="markdown")
+
+
 else:
     st.dataframe(df, use_container_width=True, hide_index=True,height=3000)
 
