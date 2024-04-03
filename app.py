@@ -32,6 +32,7 @@ if len(text) > 0 or choice != "All":
         filtered_df = df[(df['Name'].str.lower().str.contains(text.lower())) & (df['Type'] == choice)]
 
     values_list = filtered_df['Name'].tolist()
+    values_list = ["".join(val.split()) for val in values_list]
     values_str = ', '.join([f'"{val}"' for val in values_list])
     st.dataframe(filtered_df, use_container_width=True, hide_index=False)
     st.title('Results as single string:')
